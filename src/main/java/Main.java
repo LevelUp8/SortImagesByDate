@@ -7,12 +7,14 @@ import java.text.SimpleDateFormat;
 public class Main {
 
     public static void main(String[] args) {
-        // Change these values to match the directory containing the image files and the output directory
-        File inputDir = new File("/home/user/Temp/picture_source");
-        File outputDir = new File("/home/user/Temp/picture_destination");
+        // Change these values to match the directory containing the image files
+        File inputDir = new File("/home/monster/Temp/picture_source");
+        // Change this value to the root folder where the image will be copied
+        File outputDir = new File("/home/monster/Temp/picture_destination");
 
         // Get a list of all the PNG and JPG files in the input directory
-        File[] files = inputDir.listFiles((dir, name) -> name.toLowerCase().endsWith(".png") || name.toLowerCase().endsWith(".jpg"));
+        File[] files = inputDir.listFiles((dir, name) -> name.toLowerCase().endsWith(".png")
+                        || name.toLowerCase().endsWith(".jpg"));
 
         // Move the files to the output directory, preserving their original names
         for (File file : files) {
